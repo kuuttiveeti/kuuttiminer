@@ -3,7 +3,7 @@ jobs:
   #  build and test jobs go here
   deploy-job:
     docker:
-      - image: circleci/ruby:latest-browsers
+      - image: my-image
     working_directory: /tmp/kuuttiminer
     steps:
       - run:
