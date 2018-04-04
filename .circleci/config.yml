@@ -3,9 +3,18 @@ jobs:
   #  build and test jobs go here
   deploy-job:
     docker:
-      - image: my-image
+      - image: circleci/ruby:latest-browsers
     working_directory: /tmp/kuuttiminer
     steps:
+      - run:
+          name: Install dependencies
+          working_directory: /
+          command: |
+            apt-get -y -qq update
+            apt-get -y -qq install python3.4-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
+            pip install awscli --upgrade --user
       - run:
           name: Deploy to S3
           command: aws s3 sync site/ s3://thesealsaver.com/ --delete
