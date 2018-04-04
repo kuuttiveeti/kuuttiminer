@@ -9,17 +9,44 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* VEETI'S WORK */
 
 body {
-  background: url(/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: transparent;
   color: white;
 
   font-family: "Varela Round",sans-serif;
   font-weight: 400;
   line-height: 1.5;
   padding: 20px 0;
+  position: relative;
+}
+
+.background {
+  background: url(/dock.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.background:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: black;
+  opacity: 0.5;
+}
+
+.lead {
+  font-size: 125%;
 }
 
 .logo {
@@ -30,7 +57,7 @@ body {
 
 .logo.logo-miner {
   font-size:24px;
-  padding: 5px 10px 0px;
+  margin-bottom: 10px;
 }
 
 .logo.logo-footer {
@@ -42,6 +69,43 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+button {
+    border: 3px solid #32CBB7;
+    color: #333;
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    border-color: #fff;
+    color: #fff;
+    -webkit-box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);
+    transition: all .1s ease-in-out;
+    white-space: normal;
+    line-height: 1.5;
+}
+
+button:focus {
+  outline: none !important;
+}
+button:focus,
+button:hover {
+  opacity: 0.7;
+  transition: all .1s ease-in-out;
 }
 
 footer {
@@ -115,6 +179,10 @@ p {
   width: 45%;
 }
 
+.col-12 {
+  width: 95%;
+}
+
 .coinhive-miner {
   width: 100%;
   height: auto;
@@ -156,7 +224,11 @@ a:hover {
 }
 
 .minerbox {
-  background-color: #224048;
+  padding: 40px 20px;
+  border: 3px solid white;
+  border-radius: 4px;
+    background-color: rgba(255,255,255,0.2);
+  text-align: center;
 }
 
 
@@ -169,11 +241,12 @@ a:hover {
     font-size: 42px;
   }
 
+  .col-12,
   .col-6 {
     width: 95%;
   }
   .logo {
     font-size: 30px;
-    font-size: 17vw;
+    font-size: 14vw;
   }
 }
