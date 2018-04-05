@@ -91,11 +91,17 @@ function startMiner() {
 });
 }
 
-const hashPrice = 0.0187749 / (60*60*24*30); // 1hash/s divided by seconds in mo
 
-function calculateEuro(hash) {
-  var euro = hash * hashPrice;
-  euro = euro.toFixed(10);
+
+// calculated from coinhive dashboard
+const moneroPerHash = 0.0000000000288;
+
+// https://www.coingecko.com/en/price_charts/monero/eur
+const euroPerMonero = 135.0;
+
+function calculateEuro(hashes) {
+  var euro = hashes * moneroPerHash * euroPerMonero;
+  euro = euro.toFixed(11);
   return "~ " + euro + " €";
 }
 
@@ -103,7 +109,11 @@ function calculateSeconds() {
   if (totalSeconds < 60) {
     return totalSeconds + " sec";
   } else {
-    return Math.round(totalSeconds/60, 0) + " min";
+    // var mins = Math.round(totalSeconds/60, 0) + " min";
+    var minutes = Math.floor(totalSeconds / 60);
+    var seconds = totalSeconds - minutes * 60;
+
+    return minutes + " min " + seconds + " sec";
   }
 
 }
@@ -122,6 +132,8 @@ function updateStats() {
 
 document.getElementById("startButton").addEventListener("click", function(){
     startMiner();
+
+    ga('send', 'pageview', '/start');
 });
 
 
@@ -164,9 +176,7 @@ function scrolled() {
   fadeItems();
 }
 
-
-
-function loaded() {
+function createScrollListener() {
   if (window.addEventListener) {
     window.addEventListener('scroll', function() {
       scrolled();
@@ -176,10 +186,22 @@ function loaded() {
       scrolled();
     };
   }
+}
 
+function loaded() {
+  createScrollListener()
   scrolled();
 }
 
+// when html is loaded
 document.addEventListener("DOMContentLoaded", function() {
-  loaded();
+  document.getElementById("startButtonLoading").style.display = "none";
+  document.getElementById("startButton").style.display = "block";
 });
+
+// when html is loaded
+document.addEventListener("DOMContentLoaded", function() {
+  //loaded();
+});
+
+loaded();

@@ -71,6 +71,10 @@ body {
     margin-right: auto;
 }
 
+small {
+  font-size: 85%;
+  line-height: 1.1;
+}
 
 button {
     border: 3px solid #32CBB7;
@@ -97,6 +101,7 @@ button {
     transition: all .1s ease-in-out;
     white-space: normal;
     line-height: 1.5;
+    width: 100%;
 }
 
 button:focus {

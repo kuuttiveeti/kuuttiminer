@@ -18,10 +18,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#5ec6c3">
 
-<meta property="og:image" content="https://www.perfektio.fi/share.png">
-<meta property="og:image" content="https://www.perfektio.fi/share.png">
-<meta property="og:image:url" content="https://www.perfektio.fi/share.png">
-<meta property="og:image:secure_url" content="https://www.perfektio.fi/share.png">
+<meta property="og:image" content="http://www.thesealsaver.com/share.png">
+<meta property="og:image" content="http://www.thesealsaver.com/share.png">
+<meta property="og:image:url" content="http://www.thesealsaver.com/share.png">
 <meta property="og:image:width" content="323">
 <meta property="og:image:height" content="323">
 <meta property="og:locale" content="en">
@@ -46,7 +45,10 @@
 <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
 <link rel="stylesheet" href="/styles.css">
-<link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script">
+
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-116912075-1" as="script">
+<link rel="preload" href="https://authedmine.com/lib/authedmine.min.js" as="script">
+<link rel="preload" href="/scripts.js" as="script">
 
 <link rel="canonical" href="https://www.thesealsaver.com/">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -67,13 +69,17 @@
   </nav>
 
   <div class="container">
+    <br />
     <h1 class="will-fade">
       Save the seals.
       <br />Donate your computing power.
     </h1>
+    <br />
     <p class="will-fade lead">"The Saimaa Ringed Seal (Pusa hispida saimensis) is one of the rarest seals in the world. Around 380 seals remain in Lake Saimaa, Finland, on the verge of extinction." - WWF </p>
-    <p class="will-fade lead">Time has come to save the Saimaa Ringed Seals, with the help of cryptocurrencies. TheSealSaver generates cryptocurrency using your computer's computing power. All the profits you generate will be donated 100% to WWF Saimaa Ringed Seal charity. </p>
+    <p class="will-fade lead">Time has come to save the Saimaa Ringed Seals with the help of cryptocurrencies. TheSealSaver generates Monero cryptocurrency by using your computer's computing power. All the profits you generate will be donated 100% to WWF Saimaa Ringed Seal charity. </p>
 
+    <br />
+    <br />
     <br />
     <br />
   </div>
@@ -87,7 +93,14 @@
         <div class="minerbox will-fade">
           <div class="logo logo-miner">TheSealSaver</div>
 
-          <button id="startButton">Start saving the Seals</button>
+          <div id="startButtonLoading">
+            <i class="far fa-life-ring fa-spin fa-2x"></i>
+            <br />
+            <small>Miner loading up...</small>
+          </div>
+          <button id="startButton" style="display: none">
+            Start saving the Seals
+          </button>
 
           <div id="statsContainer" style="display: none;">
             <div id="totalAmount">
@@ -97,11 +110,11 @@
             <div id="totalSeconds"></div>
 
           </div>
-
-
-
-          <script src="https://authedmine.com/lib/authedmine.min.js"></script>
-          <script src="/scripts.js"></script>
+          <br />
+          <br />
+          <small>
+            Coinhive will ask your permission for computing power with a popup. You should use your computer instead of phone or tablet for faster seal saving.
+          </small>
 
         </div>
       </div>
@@ -109,6 +122,9 @@
   </div>
   <div class="container">
 
+    <br />
+    <br />
+    <br />
     <h2 class="will-fade">FAQ</h2>
     <div class="faq">
 
@@ -125,7 +141,7 @@
         <div class="col-6 will-fade">
           <h4>How does TheSealSaver work?</h4>
           <p>
-            TheSealSaver uses your computing power to calculate algorithms which generates cryptocurrency called Monero. TheSealSaver uses <a href="">CoinHive</a> for the magic stuff.
+            TheSealSaver uses your computing power to validate Monero cryptocurrency transactions. This so called mining is rewarded with Monero cryptocurrency which is eventually converted to Euros and donated to the WWF. TheSealSaver uses <a href="https://coinhive.com/" target="_blank">CoinHive</a> to do the magic in your browser.
           </p>
         </div>
         <div class="col-6 will-fade">
@@ -138,7 +154,7 @@
 
       <div class="row">
     <div class="col-6 will-fade">
-      <h4>Where does the money go?</h4>
+      <h4>Where does the money go to?</h4>
       <p>
         Money generated through TheSealSaver will be donated 100% to WWF Saimaa Ringed Seal charity.</p>
         <p>I personally coverage all the administrative and other fees from running this website.
@@ -147,30 +163,29 @@
     <div class="col-6 will-fade">
       <h4>What about fees that are in the process?</h4>
       <p>
-        Coinhive takes X% fee through all transactions. Cryptocurrency is transferred to euros with <a href="">Coinbase</a> that takes X% fee. </p>
-        <p>I personally coverage these fees by adding in the same amount money that fees take.
+        There are some small fees that occur while transfering Monero to Euros. I personally coverage these fees by adding in the same amount money that fees take.
       </p>
     </div>
   </div>
   <div class="row">
-<div class="col-6 will-fade">
-  <h4>How do I know that money goes to seals?</h4>
-  <p>
-    Good question! Check out the list of donations below:
-  </p>
-  <ul>
-    <li>
-      <a href="/proof-1.png">10 euros @ 3.4.2018</a>
-    </li>
-  </ul>
-</div>
-<div class="col-6 will-fade">
-<h4>What else I can do?</h4>
-<p>
-  You can donate straight to Ringed Seals through WWF! Check out more information at <a href="https://wwf.fi/en/saimaaringedseal/">WWF website for Saimaa Ringed Seals</a>. Saimaa Ringed Seal only faces existential threaths from humans, so you can also raise awareness for responsible fishing in Saimaa area.
-</p>
-</div>
-</div>
+    <div class="col-6 will-fade">
+      <h4>How do I know that money goes to seals?</h4>
+      <p>
+        Good question! Check out the list of donations below:
+      </p>
+      <ul>
+        <li>
+          <a href="/proof-1.png" target="_blank">10 euros @ 3.4.2018</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6 will-fade">
+    <h4>What else I can do?</h4>
+    <p>
+      You can donate straight to Ringed Seals through WWF! Check out more information at <a href="https://wwf.fi/en/saimaaringedseal/">WWF website for Saimaa Ringed Seals</a>. Saimaa Ringed Seal only faces existential threaths from humans, so you can also raise awareness for responsible fishing in Saimaa area.
+    </p>
+    </div>
+  </div>
 
 
 
@@ -180,10 +195,18 @@
 <footer>
   <div class="container will-fade">
     <div class="logo logo-footer">TheSealSaver</div>
+    <p>
+      <small>WWF is not part of this project.</small>
+    </p>
   </div>
 </footer>
 
 
+
+
+
+<script src="/scripts.js"></script>
+<script src="https://authedmine.com/lib/authedmine.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116912075-1"></script>
@@ -193,7 +216,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-116912075-1');
-    console.log("haloo");
   }
 </script>
 
