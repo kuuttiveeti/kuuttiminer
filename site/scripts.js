@@ -101,7 +101,7 @@ const euroPerMonero = 135.0;
 
 function calculateEuro(hashes) {
   var euro = hashes * moneroPerHash * euroPerMonero;
-  euro = euro.toFixed(11);
+  euro = euro.toFixed(8);
   return "~ " + euro + " €";
 }
 
@@ -118,14 +118,21 @@ function calculateSeconds() {
 
 }
 
+function statLabel(text) {
+  return '<label class="miner-stats-title">'+text+'</label>';
+}
+
 function updateStats() {
 
 
   if (totalHashes > 0) {
     var allHashes = totalHashes + retrievedTotalHashes;
-    document.getElementById("totalAmount").innerHTML = allHashes + " Hash";
-    document.getElementById("totalEuro").innerHTML = calculateEuro(allHashes);
-    document.getElementById("totalSeconds").innerHTML = calculateSeconds();
+
+    document.getElementById("totalAmount").innerHTML = statLabel("Calculated") + allHashes + " Hash";
+
+    document.getElementById("totalEuro").innerHTML = statLabel("Donated") + calculateEuro(allHashes);
+
+    document.getElementById("totalSeconds").innerHTML = statLabel("Time passed") + calculateSeconds();
   }
 }
 

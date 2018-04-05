@@ -42,7 +42,8 @@
 
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 <link rel="stylesheet" href="/styles.css">
 
@@ -60,8 +61,9 @@
 </head>
 <body>
 
-  <div class="background"></div>
 
+  <section class="hero">
+    <div class="background background-hero"></div>
   <nav>
     <div class="container">
       <div class="logo">TheSealSaver</div>
@@ -75,21 +77,16 @@
       <br />Donate your computing power.
     </h1>
     <br />
+  </div>
+</section>
+<section class="section-text">
+  <div class="container">
     <p class="will-fade lead">"The Saimaa Ringed Seal (Pusa hispida saimensis) is one of the rarest seals in the world. Around 380 seals remain in Lake Saimaa, Finland, on the verge of extinction." - WWF </p>
     <p class="will-fade lead">Time has come to save the Saimaa Ringed Seals with the help of cryptocurrencies. TheSealSaver generates Monero cryptocurrency by using your computer's computing power. All the profits you generate will be donated 100% to WWF Saimaa Ringed Seal charity. </p>
-
-    <br />
-    <br />
-    <br />
-    <br />
   </div>
-
+</section>
+<section class="section-miner">
   <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <img src="/guuttiemoji.png" class="kuutti will-fade" />
-      </div>
-      <div class="col-6">
         <div class="minerbox will-fade">
           <div class="logo logo-miner">TheSealSaver</div>
 
@@ -98,10 +95,44 @@
             <br />
             <small>Miner loading up...</small>
           </div>
+          <br />
+
+          <h4>How to get started?</h4>
+          <table class="stats-container">
+            <tr>
+              <td class="miner-stats-box">
+                <div class="dim">1.</div>Click 'Start saving the seals'
+              </td>
+              <td class="miner-stats-box">
+                <div class="dim">2.</div>Leave the site open in background
+              </td>
+              <td class="miner-stats-box">
+                <div class="dim">3.</div>Be proud of yourself! 😎
+              </td>
+            </tr>
+          </table>
+          <br />
+          <br />
           <button id="startButton" style="display: none">
             Start saving the Seals
           </button>
 
+
+          <div id="statsContainer" style="display: none;">
+            <table class="stats-container">
+              <tr>
+                <td id="totalAmount" class="miner-stats-box">
+                </td>
+                <td id="totalEuro" class="miner-stats-box">
+                  <i class="far fa-life-ring fa-spin fa-5x"></i>
+                </td>
+                <td id="totalSeconds" class="miner-stats-box">
+                </td>
+              </tr>
+            </table>
+          </div>
+
+<!--
           <div id="statsContainer" style="display: none;">
             <div id="totalAmount">
               <i class="far fa-life-ring fa-spin fa-5x"></i>
@@ -110,19 +141,20 @@
             <div id="totalSeconds"></div>
 
           </div>
+        -->
           <br />
           <br />
-          <small>
+          <small class="dim">
             Coinhive will ask your permission for computing power with a popup. You should use your computer instead of phone or tablet for faster seal saving.
           </small>
 
         </div>
-      </div>
-    </div>
   </div>
+</section>
+<section>
   <div class="container">
+    <div class="background"></div>
 
-    <br />
     <br />
     <br />
     <h2 class="will-fade">FAQ</h2>
@@ -192,14 +224,15 @@
     </div>
   </div>
 
-<footer>
-  <div class="container will-fade">
-    <div class="logo logo-footer">TheSealSaver</div>
-    <p>
-      <small>WWF is not part of this project.</small>
-    </p>
-  </div>
-</footer>
+  <footer>
+    <div class="container will-fade">
+      <div class="logo logo-footer">TheSealSaver</div>
+      <p>
+        <small>WWF is not part of this project.</small>
+      </p>
+    </div>
+  </footer>
+</section>
 
 
 
